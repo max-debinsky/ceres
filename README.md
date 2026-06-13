@@ -85,13 +85,6 @@ Full documentation lives in [`docs/`](docs/).
 
 All documentation is in `docs/`. Start with [`docs/architecture/overview.md`](docs/architecture/overview.md) for the big picture, then drill into specific subsystems.
 
-Each document follows the same structure:
-
-1. **Goals** — what this subsystem needs to do
-2. **Design alternatives** — what was considered
-3. **Decision** — what was chosen and why
-4. **Specification** — the actual detail
-
 ---
 
 ## Contributing
