@@ -1,14 +1,12 @@
 #include "cpu.h"
 #include "memory.h"
 #include "display.h"
+#include "../include/window.hpp"
 #include <cstdio>
 #include <cstdlib>
 
-// TODO: include your display library header
-// #include "your_display.h"
-
-// Approximate cycles to run per frame. At 1 MHz and 60 fps = ~16667 cycles.
-static constexpr int CYCLES_PER_FRAME = 16667;
+static constexpr int CYCLES_PER_FRAME = 16667; // ~1 MHz @ 60 fps
+static constexpr int SCALE            = 3;
 
 static void load_rom(Memory& mem, const char* path) {
     FILE* f = fopen(path, "rb");
@@ -30,36 +28,31 @@ int main(int argc, char* argv[]) {
     CPU    cpu;
 
     if (argc > 1) load_rom(mem, argv[1]);
-
     cpu.reset();
 
-    // TODO: initialize your display library, e.g.:
-    // YourDisplay display(Memory::SCREEN_W, Memory::SCREEN_H, "Ceres");
-
-    static uint32_t pixels[Memory::SCREEN_W * Memory::SCREEN_H];
+    Window window;
+    if (!window.init(Memory::SCREEN_W, Memory::SCREEN_H, SCALE, "Ceres")) {
+        fprintf(stderr, "Window init failed\n");
+        return 1;
+    }
 
     bool running = true;
     while (running) {
-        // --- Run one frame of CPU cycles ---
-        for (int i = 0; i < CYCLES_PER_FRAME; i++) {
+        for (int i = 0; i < CYCLES_PER_FRAME; i++)
             cpu.step(mem);
-        }
 
-        // --- Handle software reset request ---
         if (mem.reset_requested) {
             mem.reset_requested = false;
             cpu.reset();
         }
 
-        // --- Convert VRAM to ARGB and present ---
-        render_frame(mem, pixels);
-        // TODO: pass to your display library, e.g.:
-        // display.present(pixels);
+        render_frame(mem, window.pixels());
+        window.present();
+        window.frameLimit(60);
 
-        // --- Feed input events to the emulator ---
-        // TODO: poll events from your display library, then call:
-        //   mem.push_key(scancode, is_down);
-        //   if (quit_event) running = false;
+        // TODO: expose key events from Window::pollEvents and call
+        //   mem.push_key(scancode, is_down) here
+        running = window.pollEvents();
     }
 
     return 0;

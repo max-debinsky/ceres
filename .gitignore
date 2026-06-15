@@ -1,0 +1,26 @@
+# Build output
+build/
+.cache/
+
+# CMake generated
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.cmake
+
+# Compiled output
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+
+# Generated ROMs
+*.rom
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
