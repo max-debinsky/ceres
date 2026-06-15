@@ -46,21 +46,21 @@ Full documentation lives in [`docs/`](docs/).
 
 ## Roadmap
 
-**Phase 1 — Architecture (now)**
+**Phase 1 — Architecture**
 - [x] CPU registers and flags
 - [x] Instruction encoding strategy
 - [x] Addressing modes
 - [x] Memory map (preliminary)
 - [x] Graphics model
-- [ ] Complete ISA opcode table
-- [ ] Interrupt system
-- [ ] Audio system
-- [ ] I/O system
+- [x] Complete ISA opcode table
+- [x] Interrupt system
+- [ ] Audio system - skipped for now
+- [ ] I/O system - skiped for now
 
-**Phase 2 — Emulator**
-- [ ] CPU execution loop
+**Phase 2 — Emulator (now)**
+- [x] CPU execution loop
 - [ ] Memory subsystem
-- [ ] Graphics rendering
+- [x] Graphics rendering
 - [ ] Keyboard input
 - [ ] Debugger
 
