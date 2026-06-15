@@ -48,11 +48,11 @@ Full specification in [`../architecture/cpu.md`](../architecture/cpu.md).
 
 | Group | Document | Status |
 |---|---|---|
-| Arithmetic — ADD, SUB, MUL, DIV, CMP | [`arithmetic.md`](arithmetic.md) | 🔴 Not yet written |
-| Logic — AND, OR, XOR, NOT, shifts | [`logic.md`](logic.md) | 🔴 Not yet written |
-| Memory — LOAD, STORE, MOV, PUSH, POP | [`memory.md`](memory.md) | 🔴 Not yet written |
-| Control flow — JMP, CALL, RET, branches | [`control-flow.md`](control-flow.md) | 🔴 Not yet written |
-| I/O — video, keyboard, system | [`io.md`](io.md) | 🔴 Not yet written |
+| Arithmetic — ADD, SUB, MUL, CMP | [`arithmetic.md`](arithmetic.md) | 🟢 Done |
+| Logic — AND, OR, XOR, NOT, shifts | [`logic.md`](logic.md) | 🟢 Done |
+| Memory — LOAD, STORE, MOV, PUSH, POP | [`memory.md`](memory.md) | 🟢 Done |
+| Control flow — JMP, CALL, RET, branches | [`control-flow.md`](control-flow.md) | 🟢 Done |
+| I/O — video, keyboard, system | [`io.md`](io.md) | 🟢 Done |
 
 ---
 
@@ -75,7 +75,10 @@ This list will grow as the ISA is specified.
 
 ---
 
-## Open decisions
+## Resolved design decisions
 
-- Multiply and divide: include in hardware or implement in software?
-- Bit manipulation: dedicated instructions (BIT, SET, CLR bit) or use AND/OR masks?
+| Decision | Choice |
+|----------|--------|
+| Multiply | Hardware MUL instruction (16×16→16, low word) |
+| Divide | Software only — ROM provides `DIV_S16` and `DIV_U16` |
+| Bit manipulation | No dedicated instructions — use AND/OR/XOR with masks |

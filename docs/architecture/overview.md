@@ -60,7 +60,7 @@ A single-core 16-bit processor. Eight general-purpose 16-bit registers (R0 hardw
 
 320×200 pixels, 256-color palette, pure framebuffer. One byte per pixel. The framebuffer lives in a dedicated 64 KB VRAM chip that is completely outside the CPU's address space. The CPU writes pixels by sending commands through memory-mapped video controller registers. The palette is 256 entries of 24-bit RGB.
 
-→ See TBA for rendering details.
+→ See [`graphics.md`](graphics.md)
 
 ### Interrupts
 
