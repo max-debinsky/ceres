@@ -26,3 +26,7 @@ endif()
 add_executable(gen_test_rom tools/gen_test_rom.cpp)
 target_compile_options(gen_test_rom PRIVATE
     $<IF:$<CXX_COMPILER_ID:MSVC>,/W4,-Wall -Wextra>)
+
+add_executable(asm ../assembler/asm.cpp)
+target_compile_options(asm PRIVATE
+    $<IF:$<CXX_COMPILER_ID:MSVC>,/W4,-Wall -Wextra>)
