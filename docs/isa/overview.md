@@ -16,6 +16,12 @@ The instruction set was designed with these priorities:
 
 ---
 
+## Opcode table
+
+The complete binary encoding — opcodes, sub-fields, and width rules — is in [`opcodes.md`](opcodes.md). That document is the primary reference for the emulator decoder.
+
+---
+
 ## Instruction formats (summary)
 
 Full specification in [`../architecture/cpu.md`](../architecture/cpu.md).
