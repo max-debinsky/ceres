@@ -210,7 +210,7 @@ The stack uses the **full descending** convention:
 
 - SP points to the **last pushed item** (the current top of the stack)
 - The stack **grows downward** (toward lower addresses)
-- On reset, SP is initialized to `0xFFFF`
+- On reset, SP is initialized to `0x01FF`
 
 **PUSH Rx** sequence:
 1. Decrement SP by 2
