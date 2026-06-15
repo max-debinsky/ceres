@@ -1,7 +1,7 @@
 #include "cpu.h"
 #include "memory.h"
 #include "display.h"
-#include "../include/window.hpp"
+#include "window.hpp"
 #include <cstdio>
 #include <cstdlib>
 
