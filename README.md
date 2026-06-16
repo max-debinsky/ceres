@@ -12,12 +12,12 @@ This project is in active design. The table below tracks what exists so far.
 
 | Component | Status | Notes |
 |---|---|---|
-| CPU architecture | 🟡 In progress | Registers, flags, encoding locked |
-| Instruction set | 🔴 Not started | Opcode table being designed |
-| Memory map | 🟡 In progress | Preliminary layout defined |
-| Graphics system | 🟡 In progress | VRAM model locked, registers TBD |
-| Emulator | 🔴 Not started | — |
-| Assembler | 🔴 Not started | — |
+| CPU architecture | 🟢 In progress | Registers, flags, encoding locked |
+| Instruction set | 🟢 Not started | Opcode table being designed |
+| Memory map | 🟢 In progress | Preliminary layout defined |
+| Graphics system | 🟢 In progress | VRAM model locked, registers TBD |
+| Emulator | 🟢 Not started | — |
+| Assembler | 🟡 Not started | — |
 | BASIC interpreter | 🔴 Not started | — |
 | Compiler | 🔴 Not started | Future milestone |
 
@@ -59,7 +59,7 @@ Full documentation lives in [`docs/`](docs/).
 
 **Phase 2 — Emulator (now)**
 - [x] CPU execution loop
-- [ ] Memory subsystem
+- [x] Memory subsystem
 - [x] Graphics rendering
 - [ ] Keyboard input
 - [ ] Debugger
